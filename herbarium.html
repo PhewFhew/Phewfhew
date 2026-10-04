@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>植物档案 — A Cabinet of One</title>
+<meta name="description" content="李比昂的植物标本档案：园林专业本行的六份活体与压平标本。" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Work+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/style.css" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          background: '#EDF1E8',   // 展厅 06：浅绿
+          accent: '#4A5D42',       // 橄榄绿
+          foreground: '#1C1C1C',
+          border: 'rgba(28,28,28,0.10)',
+          muted: 'rgba(28,28,28,0.60)'
+        },
+        fontFamily: {
+          serif: ['"EB Garamond"', 'Georgia', '"Songti SC"', 'serif'],
+          sans: ['"Work Sans"', 'system-ui', '"PingFang SC"', '"Microsoft YaHei"', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+</head>
+
+<body class="bg-background text-[#1C1C1C] font-sans" style="--accent:#4A5D42">
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b border-[#1C1C1C]/10">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 h-16 flex items-center justify-between gap-6">
+    <a href="index.html" class="font-serif text-base md:text-lg tracking-[0.3em] uppercase text-[#1C1C1C] hover-underline">LI BIANG</a>
+    <ul class="hidden lg:flex items-center gap-6 font-sans text-xs tracking-[0.2em] uppercase text-[#1C1C1C]/60">
+      <li><a href="index.html" class="nav-link hover-underline">首页</a></li>
+      <li><a href="reading.html" class="nav-link hover-underline">书影音</a></li>
+      <li><a href="journal.html" class="nav-link hover-underline">日记</a></li>
+      <li><a href="fiction.html" class="nav-link hover-underline">小说</a></li>
+      <li><a href="papers.html" class="nav-link hover-underline">论文</a></li>
+      <li><a href="photo.html" class="nav-link hover-underline">摄影</a></li>
+      <li><a href="herbarium.html" class="nav-link is-current hover-underline">植物</a></li>
+      <li><a href="about.html" class="nav-link hover-underline">关于</a></li>
+    </ul>
+    <a href="index.html#index" class="lg:hidden font-sans text-xs tracking-[0.2em] uppercase text-[#1C1C1C]/60 hover-underline">目录</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="pt-32 md:pt-44 pb-16 md:pb-24 px-6 md:px-12 border-b border-[#1C1C1C]/10">
+    <div class="max-w-7xl mx-auto">
+      <p class="reveal font-sans text-xs tracking-[0.2em] uppercase text-accent mb-8">
+        Room 06 &nbsp;/&nbsp; Herbarium · 本行
+      </p>
+      <h1 class="reveal font-serif tracking-tighter text-5xl md:text-7xl lg:text-8xl leading-[0.9] text-[#1C1C1C]">
+        植物档案
+      </h1>
+      <div class="reveal grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mt-12 md:mt-16">
+        <div class="md:col-span-6">
+          <p class="font-sans text-sm leading-relaxed text-[#1C1C1C]/80 max-w-md">
+            这是我的本行。园林植物学的第一课是"摸一片叶子再说它的名字"，
+            最后一份作业是压平、上台纸、写采集记录。
+            按拉丁学名排列，采集地即拍摄地。
+          </p>
+        </div>
+        <div class="md:col-span-6 md:text-right">
+          <p class="font-sans text-xs tracking-[0.2em] uppercase text-[#1C1C1C]/40">
+            06 件藏品 &nbsp;·&nbsp; 编号 032 — 037 &nbsp;·&nbsp; 2023—2026
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-32 px-6 md:px-12">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-16">
+
+      <article class="reveal group border border-[#1C1C1C]/10 hover:border-accent transition-colors duration-500 p-6">
+        <div class="plate aspect-[4/3] mb-6">
+          <img src="assets/img/desk.jpg" alt="银杏标本，浙大紫金港" class="plate-inner w-full h-full object-cover" />
+        </div>
+        <h2 class="font-serif italic text-xl md:text-2xl text-[#1C1C1C] hv-bold mb-1">Ginkgo biloba</h2>
+        <p class="font-sans text-sm leading-relaxed text-[#1C1C1C]/80 mb-4">银杏 &nbsp;·&nbsp; 银杏科</p>
+        <dl class="space-y-2 font-sans text-xs tracking-[0.1em] uppercase text-[#1C1C1C]/40 pt-4 border-t border-[#1C1C1C]/10">
+          <div class="flex justify-between gap-4"><dt>采集地</dt><dd>浙大紫金港</dd></div>
+          <div class="flex justify-between gap-4"><dt>入档</dt><dd>2023.11.20</dd></div>
+          <div class="flex justify-between gap-4"><dt>生境</dt><dd>行道树，全日照</dd></div>
+          <div class="flex justify-between gap-4"><dt>状态</dt><dd>落叶标本，压平</dd></div>
+        </dl>
+      </article>
+
+      <article class="reveal group border border-[#1C1C1C]/10 hover:border-accent transition-colors duration-500 p-6">
+        <div class="plate aspect-[4/3] mb-6">
+          <div class="plate-inner w-full h-full flex items-center justify-center">
+            <span class="font-sans text-[10px] tracking-[0.2em] uppercase text-accent">033</span>
+          </div>
+        </div>
+        <h2 class="font-serif italic text-xl md:text-2xl text-[#1C1C1C] hv-bold mb-1">Osmanthus fragrans</h2>
+        <p class="font-sans text-sm leading-relaxed text-[#1C1C1C]/80 mb-4">桂花 &nbsp;·&nbsp; 木犀科</p>
+        <dl class="space-y-2 font-sans text-xs tracking-[0.1em] uppercase text-[#1C1C1C]/40 pt-4 border-t border-[#1C1C1C]/10">
+          <div class="flex justify-between gap-4"><dt>采集地</dt><dd>杭州，满觉陇</dd></div>
+          <div class="flex justify-between gap-4"><dt>入档</dt><dd>2024.10.08</dd></div>
+          <div class="flex justify-between gap-4"><dt>生境</dt><dd>半阴，微酸性土</dd></div>
+          <div class="flex justify-between gap-4"><dt>状态</dt><dd>花枝标本，香</dd></div>
+        </dl>
+      </article>
+
+      <article class="reveal group border border-[#1C1C1C]/10 hover:border-accent transition-colors duration-500 p-6">
+        <div class="plate aspect-[4/3] mb-6">
+          <div class="plate-inner w-full h-full flex items-center justify-center">
+            <span class="font-sans text-[10px] tracking-[0.2em] uppercase text-accent">034</span>
+          </div>
+        </div>
+        <h2 class="font-serif italic text-xl md:text-2xl text-[#1C1C1C] hv-bold mb-1">Nelumbo nucifera</h2>
+        <p class="font-sans text-sm leading-relaxed text-[#1C1C1C]/80 mb-4">莲 &nbsp;·&nbsp; 莲科</p>
+        <dl class="space-y-2 font-sans text-xs tracking-[0.1em] uppercase text-[#1C1C1C]/40 pt-4 border-t border-[#1C1C1C]/10">
+          <div class="flex justify-between gap-4"><dt>采集地</dt><dd>杭州，西湖</dd></div>
+          <div class="flex justify-between gap-4"><dt>入档</dt><dd>2025.07.19</dd></div>
+          <div class="flex justify-between gap-4"><dt>生境</dt><dd>浅水，淤泥底</dd></div>
+          <div class="flex justify-between gap-4"><dt>状态</dt><dd>毕业论文样本</dd></div>
+        </dl>
+      </article>
+
+      <article class="reveal group border border-[#1C1C1C]/10 hover:border-accent transition-colors duration-500 p-6">
+        <div class="plate aspect-[4/3] mb-6">
+          <div class="plate-inner w-full h-full flex items-center justify-center">
+            <span class="font-sans text-[10px] tracking-[0.2em] uppercase text-accent">035</span>
+          </div>
+        </div>
+        <h2 class="font-serif italic text-xl md:text-2xl text-[#1C1C1C] hv-bold mb-1">Salix babylonica</h2>
+        <p class="font-sans text-sm leading-relaxed text-[#1C1C1C]/80 mb-4">垂柳 &nbsp;·&nbsp; 杨柳科</p>
+        <dl class="space-y-2 font-sans text-xs tracking-[0.1em] uppercase text-[#1C1C1C]/40 pt-4 border-t border-[#1C1C1C]/10">
+          <div class="flex justify-between gap-4"><dt>采集地</dt><dd>江南水乡，河埠</dd></div>
+          <div class="flex justify-between gap-4"><dt>入档</dt><dd>2025.04.02</dd></div>
+          <div class="flex justify-between gap-4"><dt>生境</dt><dd>滨水，湿生</dd></div>
+          <div class="flex justify-between gap-4"><dt>状态</dt><dd>滨水景观样本</dd></div>
+        </dl>
+      </article>
+
+      <article class="reveal group border border-[#1C1C1C]/10 hover:border-accent transition-colors duration-500 p-6">
+        <div class="plate aspect-[4/3] mb-6">
+          <div class="plate-inner w-full h-full flex items-center justify-center">
+            <span class="font-sans text-[10px] tracking-[0.2em] uppercase text-accent">036</span>
+          </div>
+        </div>
+        <h2 class="font-serif italic text-xl md:text-2xl text-[#1C1C1C] hv-bold mb-1">Cinnamomum camphora</h2>
+        <p class="font-sans text-sm leading-relaxed text-[#1C1C1C]/80 mb-4">樟 &nbsp;·&nbsp; 樟科</p>
+        <dl class="space-y-2 font-sans text-xs tracking-[0.1em] uppercase text-[#1C1C1C]/40 pt-4 border-t border-[#1C1C1C]/10">
+          <div class="flex justify-between gap-4"><dt>采集地</dt><dd>杭州，校园主干道</dd></div>
+          <div class="flex justify-between gap-4"><dt>入档</dt><dd>2023.05.14</dd></div>
+          <div class="flex justify-between gap-4"><dt>生境</dt><dd>常绿阔叶，全日照</dd></div>
+          <div class="flex justify-between gap-4"><dt>状态</dt><dd>枝叶标本</dd></div>
+        </dl>
+      </article>
+
+      <article class="reveal group border border-[#1C1C1C]/10 hover:border-accent transition-colors duration-500 p-6">
+        <div class="plate aspect-[4/3] mb-6">
+          <div class="plate-inner w-full h-full flex items-center justify-center">
+            <span class="font-sans text-[10px] tracking-[0.2em] uppercase text-accent">037</span>
+          </div>
+        </div>
+        <h2 class="font-serif italic text-xl md:text-2xl text-[#1C1C1C] hv-bold mb-1">Prunus mume</h2>
+        <p class="font-sans text-sm leading-relaxed text-[#1C1C1C]/80 mb-4">梅 &nbsp;·&nbsp; 蔷薇科</p>
+        <dl class="space-y-2 font-sans text-xs tracking-[0.1em] uppercase text-[#1C1C1C]/40 pt-4 border-t border-[#1C1C1C]/10">
+          <div class="flex justify-between gap-4"><dt>采集地</dt><dd>浙大，启真湖畔</dd></div>
+          <div class="flex justify-between gap-4"><dt>入档</dt><dd>2026.02.11</dd></div>
+          <div class="flex justify-between gap-4"><dt>生境</dt><dd>疏林，排水良好</dd></div>
+          <div class="flex justify-between gap-4"><dt>状态</dt><dd>花期记录</dd></div>
+        </dl>
+      </article>
+
+    </div>
+
+    <div class="reveal mt-20 md:mt-32 pt-8 border-t border-[#1C1C1C]/10 flex flex-col sm:flex-row justify-between gap-6">
+      <a href="photo.html" class="group font-sans text-xs tracking-[0.2em] uppercase text-[#1C1C1C]/60">
+        <span class="inline-block transition-transform duration-500 group-hover:-translate-x-2" aria-hidden="true">&#8592;</span>
+        <span class="ml-3 hv-bold">上一展厅 · 摄影</span>
+      </a>
+      <a href="about.html" class="group font-sans text-xs tracking-[0.2em] uppercase text-[#1C1C1C]/60 sm:text-right">
+        <span class="hv-bold">关于我 &amp; 联系</span>
+        <span class="inline-block ml-3 transition-transform duration-500 group-hover:translate-x-2" aria-hidden="true">&#8594;</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="py-16 md:py-24 px-6 md:px-12 border-t border-[#1C1C1C]/10">
+  <div class="max-w-7xl mx-auto">
+    <div class="reveal flex flex-col lg:flex-row lg:items-end justify-between gap-10">
+      <div>
+        <p class="font-serif text-2xl md:text-3xl tracking-[0.2em] uppercase text-[#1C1C1C] mb-3">LI BIANG</p>
+        <p class="font-sans text-xs tracking-[0.2em] uppercase text-[#1C1C1C]/40">A Cabinet of One &nbsp;·&nbsp; 展厅 06 植物档案</p>
+      </div>
+      <ul class="flex flex-wrap gap-x-5 gap-y-3 font-sans text-xs tracking-[0.2em] uppercase text-[#1C1C1C]/60">
+        <li><a href="mailto:2658611424@qq.com" class="hover-underline">2658611424@qq.com</a></li>
+        <li aria-hidden="true" class="text-[#1C1C1C]/40">·</li>
+        <li><a href="https://www.douban.com/people/243018927/?_i=0959890mT0b6KV" target="_blank" rel="noopener" class="hover-underline">豆瓣</a></li>
+        <li aria-hidden="true" class="text-[#1C1C1C]/40">·</li>
+        <li><a href="https://mp.weixin.qq.com/s/dGD1uBeyI69ul-qxwAacgg" target="_blank" rel="noopener" class="hover-underline">公众号 皮厈</a></li>
+      </ul>
+    </div>
+    <div class="mt-8 pt-6 border-t border-[#1C1C1C]/10 flex flex-col sm:flex-row justify-between gap-4">
+      <p class="font-sans text-xs tracking-[0.2em] uppercase text-[#1C1C1C]/40">&copy; 2026 李比昂 &nbsp;·&nbsp; 除注明外，图文均为本人所有</p>
+      <p class="font-sans text-xs tracking-[0.2em] uppercase text-[#1C1C1C]/40">Room 06 &nbsp;/&nbsp; 橄榄绿</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>
