@@ -3,80 +3,120 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>A Cabinet of One — 李比昂 · 个人策展档案</title>
-<meta name="description" content="园林 × 电影。书影音评论、日记、小说、学术论文、摄影集、植物档案——李比昂的个人策展档案。" />
+<title>Phew! — 李比昂 · 个人策展档案</title>
+<meta name="description" content="李比昂的个人策展档案：札记、文章、影像、日记、花园。学园林的人，把四年读成了电影史。" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Work+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="apple-touch-icon" href="assets/favicon-180.png" />
+
 <link rel="stylesheet" href="assets/style.css" />
 
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          background: '#F9F8F6',   // 暖米（基调页）
-          accent: '#1C1C1C',
-          foreground: '#1C1C1C',
-          border: 'rgba(28,28,28,0.10)',
-          muted: 'rgba(28,28,28,0.60)'
-        },
-        fontFamily: {
-          serif: ['"EB Garamond"', 'Georgia', '"Songti SC"', 'serif'],
-          sans: ['"Work Sans"', 'system-ui', '"PingFang SC"', '"Microsoft YaHei"', 'sans-serif']
-        }
-      }
-    }
-  }
-</script>
+<!-- 云雾开场的关键样式内联，防止外部 CSS 未就绪时先闪一下页面 -->
+<style>
+  .phew-intro{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;overflow:hidden;touch-action:none;background:#F9F8F6}
+  html.phew-lock,html.phew-lock body{overflow:hidden}
+  .phew-intro__cloud{position:absolute;inset:0}
+  .phew-intro__cloud::after{content:'';position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(#1C1C1C 1px,transparent 1.3px);background-size:6px 6px;opacity:.05}
+  .phew-blob{position:absolute;left:var(--x);top:var(--y);width:30vmax;height:30vmax;margin:-15vmax 0 0 -15vmax;border-radius:52% 46% 60% 42%/46% 58% 42% 54%;background:radial-gradient(closest-side,#EFE7D6 0%,#EFE7D6 58%,rgba(239,231,214,0) 100%);transform:scale(var(--s,1));will-change:transform,opacity}
+  .phew-intro__stage{position:relative;z-index:2;width:min(72vw,560px)}
+  .phew-intro__skip{position:absolute;right:24px;bottom:24px;z-index:3;font-family:'Work Sans',system-ui,sans-serif;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(28,28,28,.45);background:none;border:0;cursor:pointer;padding:8px}
+  @media (prefers-reduced-motion:reduce){#phew-intro{display:none!important}}
+</style>
 </head>
 
-<body class="bg-background text-[#1C1C1C] font-sans" style="--accent:#1C1C1C">
+<body class="page" style="--bg:#F9F8F6;--accent:#1C1C1C">
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b border-[#1C1C1C]/10">
-  <div class="max-w-7xl mx-auto px-6 md:px-12 h-16 flex items-center justify-between gap-6">
-    <a href="index.html" class="font-serif text-base md:text-lg tracking-[0.3em] uppercase text-[#1C1C1C] hover-underline">LI BIANG</a>
-    <ul class="hidden lg:flex items-center gap-6 font-sans text-xs tracking-[0.2em] uppercase text-[#1C1C1C]/60">
-      <li><a href="index.html" class="nav-link is-current hover-underline">首页</a></li>
-      <li><a href="reading.html" class="nav-link hover-underline">书影音</a></li>
-      <li><a href="journal.html" class="nav-link hover-underline">日记</a></li>
-      <li><a href="fiction.html" class="nav-link hover-underline">小说</a></li>
-      <li><a href="papers.html" class="nav-link hover-underline">论文</a></li>
-      <li><a href="photo.html" class="nav-link hover-underline">摄影</a></li>
-      <li><a href="herbarium.html" class="nav-link hover-underline">植物</a></li>
-      <li><a href="about.html" class="nav-link hover-underline">关于</a></li>
-    </ul>
-    <a href="#index" class="lg:hidden font-sans text-xs tracking-[0.2em] uppercase text-[#1C1C1C]/60 hover-underline">目录</a>
+<!-- ══ Phew 云雾开场：仅首页、当天首次访问 ══ -->
+<div id="phew-intro" class="phew-intro">
+  <div class="phew-intro__cloud" aria-hidden="true">
+    <i class="phew-blob" style="--x:14%;--y:26%;--s:1.45;--dx:-46%;--dy:-32%;--d:0ms"></i>
+    <i class="phew-blob" style="--x:38%;--y:14%;--s:1.20;--dx:-22%;--dy:-48%;--d:60ms"></i>
+    <i class="phew-blob" style="--x:62%;--y:22%;--s:1.55;--dx:24%;--dy:-40%;--d:30ms"></i>
+    <i class="phew-blob" style="--x:86%;--y:32%;--s:1.25;--dx:52%;--dy:-26%;--d:90ms"></i>
+    <i class="phew-blob" style="--x:22%;--y:62%;--s:1.35;--dx:-38%;--dy:34%;--d:120ms"></i>
+    <i class="phew-blob" style="--x:50%;--y:70%;--s:1.60;--dx:6%;--dy:46%;--d:45ms"></i>
+    <i class="phew-blob" style="--x:78%;--y:66%;--s:1.30;--dx:44%;--dy:30%;--d:150ms"></i>
+    <i class="phew-blob" style="--x:50%;--y:42%;--s:1.85;--dx:0%;--dy:-14%;--d:75ms"></i>
+  </div>
+
+  <div class="phew-intro__stage">
+    <svg class="phew phew--lg" viewBox="0 0 300 120" role="img" aria-label="Phew!">
+      <g class="phew__word">
+        <text class="phew__t phew__t--a" x="150" y="84" text-anchor="middle">Phew</text>
+        <text class="phew__t phew__t--b" x="150" y="84" text-anchor="middle">Phew</text>
+        <text class="phew__t phew__t--c" x="150" y="84" text-anchor="middle">Phew</text>
+        <g class="phew__bang" transform="translate(236 22)">
+          <rect x="0" y="0" width="9" height="44" rx="4.5"></rect>
+          <circle cx="4.5" cy="56" r="6"></circle>
+        </g>
+      </g>
+    </svg>
+  </div>
+
+  <button type="button" class="phew-intro__skip">跳过 <span aria-hidden="true">Esc</span></button>
+</div>
+<script src="assets/phew-intro.js"></script>
+<noscript><style>#phew-intro{display:none!important}</style></noscript>
+
+<header class="topbar">
+  <div class="topbar__inner">
+    <a href="index.html" class="brand group" aria-label="Phew — 返回首页">
+      <svg class="phew brand__mark" viewBox="0 0 300 120" role="img" aria-label="Phew!">
+        <g class="phew__word">
+          <text class="phew__t phew__t--a" x="150" y="84" text-anchor="middle">Phew</text>
+          <text class="phew__t phew__t--b" x="150" y="84" text-anchor="middle">Phew</text>
+          <text class="phew__t phew__t--c" x="150" y="84" text-anchor="middle">Phew</text>
+          <g class="phew__bang" transform="translate(236 22)">
+            <rect x="0" y="0" width="9" height="44" rx="4.5"></rect>
+            <circle cx="4.5" cy="56" r="6"></circle>
+          </g>
+        </g>
+      </svg>
+      <span class="brand__word hv-bold">LI BIANG</span>
+    </a>
+
+    <nav class="nav" aria-label="主导航">
+      <a href="index.html" class="nav__link is-current">首页</a>
+      <a href="notes.html" class="nav__link">札记</a>
+      <a href="essays.html" class="nav__link">文章</a>
+      <a href="media.html" class="nav__link">影像</a>
+      <a href="journal.html" class="nav__link">日记</a>
+      <a href="garden.html" class="nav__link">花园</a>
+      <a href="about.html" class="nav__link">关于</a>
+    </nav>
+
+    <a href="#index" class="nav__mini hover-underline">目录</a>
   </div>
 </header>
 
 <main>
 
   <!-- ══ MASTHEAD ══ -->
-  <section class="pt-40 md:pt-56 pb-20 md:pb-32 px-6 md:px-12">
-    <div class="max-w-7xl mx-auto">
+  <section class="masthead">
+    <div class="wrap">
 
-      <div class="reveal flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-b border-[#1C1C1C]/10 py-3 font-sans text-xs tracking-[0.2em] uppercase text-[#1C1C1C]/40 mb-16 md:mb-24">
-        <span>No. 01</span><span aria-hidden="true">·</span>
+      <div class="reveal masthead__meta meta">
+        <span>No. 00</span><span aria-hidden="true">·</span>
         <span>MMXXVI</span><span aria-hidden="true">·</span>
         <span>Zhejiang University</span><span aria-hidden="true">·</span>
         <span>2022 — 2026</span>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-24 items-end">
-        <div class="md:col-span-8 reveal">
-          <h1 class="font-serif tracking-tighter leading-[0.9] text-6xl md:text-8xl lg:text-[9rem] text-[#1C1C1C]">
+      <div class="masthead__grid">
+        <div class="reveal">
+          <h1 class="display d-1">
             A Cabinet<br />
-            <span class="italic text-[#1C1C1C]/60">of One</span>
+            <span class="italic dim">of One</span>
           </h1>
         </div>
-        <div class="md:col-span-4 reveal">
-          <p class="italic text-[#1C1C1C]/60 text-base md:text-lg leading-relaxed mb-8">示例文本</p>
-          <p class="font-sans text-sm leading-relaxed text-[#1C1C1C]/80 max-w-xs">
+        <div class="reveal">
+          <p class="serif italic dim" style="font-size:17px;line-height:1.6;margin:0 0 24px">
+            白天量树，晚上看片，剩下的时间养活一阳台的植物和一只鸟。
+          </p>
+          <p class="lede" style="max-width:20em">
             李比昂 / LI BIANG。这里存放四年里读过的、看过的、
-            写下的与养活的——六个展厅，三十七件藏品。
+            写下的与养活的——<span class="magnet">五个展厅，三十七件藏品</span>。
           </p>
         </div>
       </div>
@@ -84,144 +124,128 @@
     </div>
   </section>
 
-  <!-- ══ ELSEWHERE 个人导航 ══ -->
-  <section class="pb-24 md:pb-32 px-6 md:px-12 border-b border-[#1C1C1C]/10">
-    <div class="max-w-7xl mx-auto">
-      <p class="reveal font-sans text-xs tracking-[0.2em] uppercase text-[#1C1C1C]/40 mb-8">Elsewhere / 在别处</p>
+  <!-- ══ ELSEWHERE ══ -->
+  <section class="section" style="padding-top:0;border-bottom:1px solid rgba(28,28,28,.10)">
+    <div class="wrap">
+      <p class="reveal eyebrow" style="margin-bottom:32px">Elsewhere / 在别处</p>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
-
-        <a href="mailto:2658611424@qq.com" class="reveal group block border-t border-[#1C1C1C]/10 pt-6 rule">
-          <p class="font-sans text-xs tracking-[0.2em] uppercase text-[#1C1C1C]/40 mb-3">01 &nbsp;/&nbsp; Mail</p>
-          <p class="font-serif text-2xl md:text-3xl text-[#1C1C1C] hv-bold mb-2">2658611424@qq.com</p>
-          <p class="font-sans text-xs tracking-[0.1em] text-[#1C1C1C]/60 leading-relaxed">QQ 邮箱 &nbsp;·&nbsp; 最快能找到我的地方</p>
+      <div class="cols-3">
+        <a href="mailto:2658611424@qq.com" class="linkcard group reveal">
+          <p class="meta" style="margin-bottom:10px">01 &nbsp;/&nbsp; Mail</p>
+          <p class="linkcard__title hv-bold">2658611424@qq.com</p>
         </a>
 
-        <a href="https://www.douban.com/people/243018927/?_i=0959890mT0b6KV" target="_blank" rel="noopener" class="reveal group block border-t border-[#1C1C1C]/10 pt-6 rule">
-          <p class="font-sans text-xs tracking-[0.2em] uppercase text-[#1C1C1C]/40 mb-3">02 &nbsp;/&nbsp; Douban</p>
-          <p class="font-serif text-2xl md:text-3xl text-[#1C1C1C] hv-bold mb-2">豆瓣 &nbsp;·&nbsp; 皮厈</p>
-          <p class="font-sans text-xs tracking-[0.1em] text-[#1C1C1C]/60 leading-relaxed">观影量 950+ &nbsp;·&nbsp; 长评与短评的写作现场</p>
+        <a href="https://www.douban.com/people/243018927/?_i=0959890mT0b6KV" target="_blank" rel="noopener" class="linkcard group reveal">
+          <p class="meta" style="margin-bottom:10px">02 &nbsp;/&nbsp; Douban</p>
+          <p class="linkcard__title hv-bold">豆瓣 &nbsp;·&nbsp; 离岸水杉失眠</p>
         </a>
 
-        <a href="https://mp.weixin.qq.com/s/dGD1uBeyI69ul-qxwAacgg" target="_blank" rel="noopener" class="reveal group block border-t border-[#1C1C1C]/10 pt-6 rule">
-          <p class="font-sans text-xs tracking-[0.2em] uppercase text-[#1C1C1C]/40 mb-3">03 &nbsp;/&nbsp; 公众号</p>
-          <p class="font-serif text-2xl md:text-3xl text-[#1C1C1C] hv-bold mb-2">皮厈</p>
-          <p class="font-sans text-xs tracking-[0.1em] text-[#1C1C1C]/60 leading-relaxed">代表文章 &nbsp;·&nbsp; 点击直达一篇影评</p>
+        <a href="https://mp.weixin.qq.com/s/dGD1uBeyI69ul-qxwAacgg" target="_blank" rel="noopener" class="linkcard group reveal">
+          <p class="meta" style="margin-bottom:10px">03 &nbsp;/&nbsp; 公众号</p>
+          <p class="linkcard__title hv-bold">皮厈</p>
         </a>
-
       </div>
     </div>
   </section>
 
   <!-- ══ PROLOGUE ══ -->
-  <section class="py-24 md:py-40 px-6 md:px-12">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-24">
-      <div class="md:col-span-5 reveal">
-        <div class="md:sticky md:top-32">
-          <p class="font-sans text-xs tracking-[0.2em] uppercase text-[#1C1C1C]/40 mb-6">Prologue / 前言</p>
-          <h2 class="font-serif tracking-tighter text-3xl md:text-4xl lg:text-5xl leading-[1.05] text-[#1C1C1C]">
+  <section class="section">
+    <div class="wrap split split--wide">
+      <div class="reveal">
+        <div class="sticky-side">
+          <p class="eyebrow" style="margin-bottom:24px">Prologue / 前言</p>
+          <h2 class="display d-2">
             我是学园林的，<br />
-            <span class="italic text-[#1C1C1C]/60">却把四年读成了电影史</span>
+            <span class="italic dim">却把四年读成了电影史</span>
           </h2>
         </div>
       </div>
-      <div class="md:col-span-7 reveal">
-        <div class="max-w-md space-y-6 font-sans text-sm md:text-base leading-relaxed text-[#1C1C1C]/80">
-          <p>
+      <div class="reveal">
+        <div style="max-width:30em">
+          <p class="body-text">
             在紫金港画图的时候，我在想拉维莱特公园怎么被屈米拆成一叠电影分镜；
             做毕业设计时研究江南滨水景观，我用扎根理论把江浙沪的电影样本
             一个个编码进数据库。这两件事在我这里从来不矛盾——
           </p>
-          <p class="font-serif text-xl md:text-2xl leading-relaxed text-[#1C1C1C]">
+          <p class="serif" style="font-size:22px;line-height:1.6;margin:0 0 24px">
             园林是空间的分镜，电影是时间的造园。
           </p>
-          <p>
-            学术训练要求我删掉"我"，但影评、日记和照片里全是"我"。
-            于是我给它们编了号：001 到 037。编号是一种抵抗自恋的方式，
-            也是把园林、电影、植物放进同一个房间的唯一办法。
+          <p class="body-text">
+            学术训练要求我删掉「我」，但短评、日记和照片里全是「我」。
+            于是我给它们编了号：001 到 039。编号是一种抵抗自恋的方式，
+            也是把园林、电影、植物和一只鹦鹉放进同一个房间的唯一办法。
           </p>
-          <p class="font-sans text-xs tracking-[0.2em] uppercase text-[#1C1C1C]/40 pt-4 border-t border-[#1C1C1C]/10">
-            共 37 件藏品 &nbsp;·&nbsp; 六个展厅 &nbsp;·&nbsp; 持续增补中
+          <p class="meta" style="padding-top:24px;border-top:1px solid rgba(28,28,28,.10)">
+            共 37 件藏品 &nbsp;·&nbsp; 五个展厅 &nbsp;·&nbsp; 持续增补中
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══ INDEX 总目录 ══ -->
-  <section id="index" class="py-24 md:py-40 px-6 md:px-12 border-t border-[#1C1C1C]/10">
-    <div class="max-w-7xl mx-auto">
+  <!-- ══ INDEX ══ -->
+  <section id="index" class="section" style="border-top:1px solid rgba(28,28,28,.10)">
+    <div class="wrap">
 
-      <div class="reveal flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 md:mb-24">
-        <h2 class="font-serif tracking-tighter text-4xl md:text-6xl leading-[0.95] text-[#1C1C1C]">Index</h2>
-        <p class="font-sans text-xs tracking-[0.2em] uppercase text-[#1C1C1C]/40">六个展厅 / Six Rooms &nbsp;·&nbsp; 01 — 06</p>
+      <div class="reveal" style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:64px">
+        <h2 class="display d-2">Index</h2>
+        <p class="meta">五个展厅 / Five Rooms &nbsp;·&nbsp; 01 — 05</p>
       </div>
 
-      <ul class="border-t border-[#1C1C1C]/10">
+      <div class="index-list">
 
-        <li class="reveal group">
-          <a href="reading.html" class="grid grid-cols-12 gap-4 md:gap-8 items-baseline py-6 md:py-8 border-b border-[#1C1C1C]/10 rule">
-            <span class="col-span-2 md:col-span-1 font-sans text-xs tracking-[0.2em] text-[#1C1C1C]/40">01</span>
-            <span class="col-span-10 md:col-span-6 font-serif tracking-tighter text-2xl md:text-4xl text-[#1C1C1C] hv-bold">书影音评论</span>
-            <span class="hidden md:block md:col-span-3 font-sans text-xs tracking-[0.2em] uppercase text-[#1C1C1C]/40">Reading · Screening</span>
-            <span class="col-span-12 md:col-span-2 md:text-right font-sans text-xs tracking-[0.2em] text-[#1C1C1C]/40">09 件 &nbsp;/&nbsp; 2022–2026</span>
-          </a>
-        </li>
+        <a href="notes.html" class="index-item group reveal">
+          <div class="index-row rule">
+            <span class="index-row__num">01</span>
+            <span class="index-row__name hv-bold">札记</span>
+            <span class="index-row__en">Notes · 便签式短评</span>
+            <span class="index-row__count meta">13 条 &nbsp;/&nbsp; 可搜索</span>
+          </div>
+        </a>
 
-        <li class="reveal group">
-          <a href="journal.html" class="grid grid-cols-12 gap-4 md:gap-8 items-baseline py-6 md:py-8 border-b border-[#1C1C1C]/10 rule">
-            <span class="col-span-2 md:col-span-1 font-sans text-xs tracking-[0.2em] text-[#1C1C1C]/40">02</span>
-            <span class="col-span-10 md:col-span-6 font-serif tracking-tighter text-2xl md:text-4xl text-[#1C1C1C] hv-bold">日记</span>
-            <span class="hidden md:block md:col-span-3 font-sans text-xs tracking-[0.2em] uppercase text-[#1C1C1C]/40">Journal · 手稿</span>
-            <span class="col-span-12 md:col-span-2 md:text-right font-sans text-xs tracking-[0.2em] text-[#1C1C1C]/40">05 件 &nbsp;/&nbsp; 2022–2026</span>
-          </a>
-        </li>
+        <a href="essays.html" class="index-item group reveal">
+          <div class="index-row rule">
+            <span class="index-row__num">02</span>
+            <span class="index-row__name hv-bold">文章</span>
+            <span class="index-row__en">Essays · 课程与毕设</span>
+            <span class="index-row__count meta">06 篇 &nbsp;/&nbsp; 2023–2026</span>
+          </div>
+        </a>
 
-        <li class="reveal group">
-          <a href="fiction.html" class="grid grid-cols-12 gap-4 md:gap-8 items-baseline py-6 md:py-8 border-b border-[#1C1C1C]/10 rule">
-            <span class="col-span-2 md:col-span-1 font-sans text-xs tracking-[0.2em] text-[#1C1C1C]/40">03</span>
-            <span class="col-span-10 md:col-span-6 font-serif tracking-tighter text-2xl md:text-4xl text-[#1C1C1C] hv-bold">小说</span>
-            <span class="hidden md:block md:col-span-3 font-sans text-xs tracking-[0.2em] uppercase text-[#1C1C1C]/40">Fiction · 节选</span>
-            <span class="col-span-12 md:col-span-2 md:text-right font-sans text-xs tracking-[0.2em] text-[#1C1C1C]/40">02 件 &nbsp;/&nbsp; 2023–2026</span>
-          </a>
-        </li>
+        <a href="media.html" class="index-item group reveal">
+          <div class="index-row rule">
+            <span class="index-row__num">03</span>
+            <span class="index-row__name hv-bold">影像</span>
+            <span class="index-row__en">Photographs &amp; Films</span>
+            <span class="index-row__count meta">09 件 &nbsp;/&nbsp; 照片 + 视频</span>
+          </div>
+        </a>
 
-        <li class="reveal group">
-          <a href="papers.html" class="grid grid-cols-12 gap-4 md:gap-8 items-baseline py-6 md:py-8 border-b border-[#1C1C1C]/10 rule">
-            <span class="col-span-2 md:col-span-1 font-sans text-xs tracking-[0.2em] text-[#1C1C1C]/40">04</span>
-            <span class="col-span-10 md:col-span-6 font-serif tracking-tighter text-2xl md:text-4xl text-[#1C1C1C] hv-bold">学术论文</span>
-            <span class="hidden md:block md:col-span-3 font-sans text-xs tracking-[0.2em] uppercase text-[#1C1C1C]/40">Papers · 课程与毕设</span>
-            <span class="col-span-12 md:col-span-2 md:text-right font-sans text-xs tracking-[0.2em] text-[#1C1C1C]/40">07 件 &nbsp;/&nbsp; 2023–2026</span>
-          </a>
-        </li>
+        <a href="journal.html" class="index-item group reveal">
+          <div class="index-row rule">
+            <span class="index-row__num">04</span>
+            <span class="index-row__name hv-bold">日记</span>
+            <span class="index-row__en">Journal · 手稿</span>
+            <span class="index-row__count meta">02 则 &nbsp;/&nbsp; 可按日期排序</span>
+          </div>
+        </a>
 
-        <li class="reveal group">
-          <a href="photo.html" class="grid grid-cols-12 gap-4 md:gap-8 items-baseline py-6 md:py-8 border-b border-[#1C1C1C]/10 rule">
-            <span class="col-span-2 md:col-span-1 font-sans text-xs tracking-[0.2em] text-[#1C1C1C]/40">05</span>
-            <span class="col-span-10 md:col-span-6 font-serif tracking-tighter text-2xl md:text-4xl text-[#1C1C1C] hv-bold">摄影集</span>
-            <span class="hidden md:block md:col-span-3 font-sans text-xs tracking-[0.2em] uppercase text-[#1C1C1C]/40">Photographs · 影像</span>
-            <span class="col-span-12 md:col-span-2 md:text-right font-sans text-xs tracking-[0.2em] text-[#1C1C1C]/40">08 件 &nbsp;/&nbsp; 2022–2026</span>
-          </a>
-        </li>
+        <a href="garden.html" class="index-item group reveal">
+          <div class="index-row rule">
+            <span class="index-row__num">05</span>
+            <span class="index-row__name hv-bold">花园</span>
+            <span class="index-row__en">Garden · 植物与有钱</span>
+            <span class="index-row__count meta">07 件 &nbsp;/&nbsp; 2023–2026</span>
+          </div>
+        </a>
 
-        <li class="reveal group">
-          <a href="herbarium.html" class="grid grid-cols-12 gap-4 md:gap-8 items-baseline py-6 md:py-8 border-b border-[#1C1C1C]/10 rule">
-            <span class="col-span-2 md:col-span-1 font-sans text-xs tracking-[0.2em] text-[#1C1C1C]/40">06</span>
-            <span class="col-span-10 md:col-span-6 font-serif tracking-tighter text-2xl md:text-4xl text-[#1C1C1C] hv-bold">植物档案</span>
-            <span class="hidden md:block md:col-span-3 font-sans text-xs tracking-[0.2em] uppercase text-[#1C1C1C]/40">Herbarium · 本行</span>
-            <span class="col-span-12 md:col-span-2 md:text-right font-sans text-xs tracking-[0.2em] text-[#1C1C1C]/40">06 件 &nbsp;/&nbsp; 2023–2026</span>
-          </a>
-        </li>
+      </div>
 
-      </ul>
-
-      <div class="reveal mt-20 md:mt-32 flex flex-col sm:flex-row sm:items-center justify-between gap-6 border-t border-[#1C1C1C]/10 pt-8">
-        <p class="font-sans text-xs tracking-[0.2em] uppercase text-[#1C1C1C]/40">
-          李比昂 &nbsp;·&nbsp; 杭州 / 浙江
-        </p>
-        <a href="about.html" class="group inline-flex items-center gap-3 font-sans text-xs tracking-[0.2em] uppercase text-[#1C1C1C]/60">
+      <div class="reveal" style="margin-top:80px;padding-top:32px;border-top:1px solid rgba(28,28,28,.10);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px">
+        <p class="meta">李比昂 &nbsp;·&nbsp; 杭州 / 浙江</p>
+        <a href="about.html" class="group hover-underline meta" style="display:inline-flex;align-items:center;gap:12px">
           <span class="hv-bold">关于我</span>
-          <span class="transition-transform duration-500 group-hover:translate-x-2" aria-hidden="true">&#8594;</span>
+          <span class="pager__arrow pager__arrow--right" aria-hidden="true">&#8594;</span>
         </a>
       </div>
 
@@ -230,42 +254,40 @@
 
 </main>
 
-<footer class="py-16 md:py-24 px-6 md:px-12 border-t border-[#1C1C1C]/10">
-  <div class="max-w-7xl mx-auto">
-    <div class="reveal flex flex-col lg:flex-row lg:items-end justify-between gap-10">
+<footer class="footer">
+  <div class="wrap">
+    <div class="reveal footer__row">
       <div>
-        <p class="font-serif text-2xl md:text-3xl tracking-[0.2em] uppercase text-[#1C1C1C] mb-3">LI BIANG</p>
-        <p class="font-sans text-xs tracking-[0.2em] uppercase text-[#1C1C1C]/40">A Cabinet of One &nbsp;·&nbsp; 李比昂 个人策展档案</p>
+        <p class="footer__brand">LI BIANG</p>
+        <p class="meta">Phew! &nbsp;·&nbsp; 李比昂 个人策展档案</p>
       </div>
-      <ul class="flex flex-wrap gap-x-5 gap-y-3 font-sans text-xs tracking-[0.2em] uppercase text-[#1C1C1C]/60">
+      <ul class="footer__links">
         <li><a href="mailto:2658611424@qq.com" class="hover-underline">2658611424@qq.com</a></li>
-        <li aria-hidden="true" class="text-[#1C1C1C]/40">·</li>
-        <li><a href="https://www.douban.com/people/243018927/?_i=0959890mT0b6KV" target="_blank" rel="noopener" class="hover-underline">豆瓣</a></li>
-        <li aria-hidden="true" class="text-[#1C1C1C]/40">·</li>
+        <li aria-hidden="true">·</li>
+        <li><a href="https://www.douban.com/people/243018927/?_i=0959890mT0b6KV" target="_blank" rel="noopener" class="hover-underline">豆瓣 · 离岸水杉失眠</a></li>
+        <li aria-hidden="true">·</li>
         <li><a href="https://mp.weixin.qq.com/s/dGD1uBeyI69ul-qxwAacgg" target="_blank" rel="noopener" class="hover-underline">公众号 皮厈</a></li>
       </ul>
     </div>
 
-    <nav class="reveal mt-12 pt-6 border-t border-[#1C1C1C]/10" aria-label="栏目导航">
-      <ul class="flex flex-wrap gap-x-5 gap-y-3 font-sans text-xs tracking-[0.2em] uppercase text-[#1C1C1C]/60">
-        <li><a href="index.html" class="hover-underline">首页</a></li>
-        <li><a href="reading.html" class="hover-underline">书影音</a></li>
-        <li><a href="journal.html" class="hover-underline">日记</a></li>
-        <li><a href="fiction.html" class="hover-underline">小说</a></li>
-        <li><a href="papers.html" class="hover-underline">论文</a></li>
-        <li><a href="photo.html" class="hover-underline">摄影</a></li>
-        <li><a href="herbarium.html" class="hover-underline">植物</a></li>
-        <li><a href="about.html" class="hover-underline">关于</a></li>
-      </ul>
-    </nav>
+    <ul class="footer__nav" aria-label="栏目导航">
+      <li><a href="index.html" class="hover-underline">首页</a></li>
+      <li><a href="notes.html" class="hover-underline">札记</a></li>
+      <li><a href="essays.html" class="hover-underline">文章</a></li>
+      <li><a href="media.html" class="hover-underline">影像</a></li>
+      <li><a href="journal.html" class="hover-underline">日记</a></li>
+      <li><a href="garden.html" class="hover-underline">花园</a></li>
+      <li><a href="about.html" class="hover-underline">关于</a></li>
+    </ul>
 
-    <div class="mt-8 pt-6 border-t border-[#1C1C1C]/10 flex flex-col sm:flex-row justify-between gap-4">
-      <p class="font-sans text-xs tracking-[0.2em] uppercase text-[#1C1C1C]/40">&copy; 2026 李比昂 &nbsp;·&nbsp; 除注明外，图文均为本人所有</p>
-      <p class="font-sans text-xs tracking-[0.2em] uppercase text-[#1C1C1C]/40">Set in EB Garamond &amp; Work Sans</p>
+    <div class="footer__fine">
+      <p class="meta">&copy; 2026 李比昂 &nbsp;·&nbsp; 除注明外，图文均为本人所有</p>
+      <p class="meta">Set in EB Garamond &amp; Work Sans</p>
     </div>
   </div>
 </footer>
 
 <script src="assets/site.js"></script>
+<script src="assets/magnet.js"></script>
 </body>
 </html>
